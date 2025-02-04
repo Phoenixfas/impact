@@ -59,15 +59,15 @@ export default function Navbar() {
                     <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-10 text-xl">
                         <Link href="/about">About Us</Link>
                         <Link href="/services">Services</Link>
-                        <Link href="/blogs">Blogs</Link>
-                        <Link href="#">Why Us</Link>
+                        <Link href="/blog">Blogs</Link>
+                        <Link href="/#why-us">Why Us</Link>
                     </div>
                     <div className="hidden lg:flex items-center text-xl ">
                         <Link href={"/contact"} className={` px-7 py-2 border ${isScrolled ? "text-[var(--foreground)] hover:text-[var(--background)] bg-[var(--background)] hover:bg-[var(--foreground)] border-[var(--background)]" : "text-[var(--background)] hover:text-[var(--foreground)] bg-[var(--foreground)] hover:bg-[var(--background)] border-[var(--foreground)]"} duration-300 garet`}>CONTACT US</Link>
                     </div>
                 </div>
                 <div className="relative flex-[1] flex justify-end items-center cursor-pointer lg:hidden" onClick={() => toggleMobile()}>
-                    <div className={`h-10 w-10 p-1 border ${isScrolled ? "border-[var(--background)] text-[var(--background)]" : "border-[var(--foreground)] text-[var(--foreground)]"} rounded-md text-5xl flex items-center justify-center`}>
+                    <div className={`h-8 w-8 p-1 border ${isScrolled ? "border-[var(--background)] text-[var(--background)]" : "border-[var(--foreground)] text-[var(--foreground)]"} rounded-md text-4xl flex items-center justify-center`}>
                         <HiOutlineMenuAlt3 />
                     </div>
                 </div>
@@ -83,8 +83,8 @@ export default function Navbar() {
                 <div className="relative flex flex-col items-center gap-10 text-sm mokoto">
                     <Link href={"/about"} className="font-semibold text-[var(--background)] duration-300" onClick={() => toggleMobile()}>About Us</Link>
                     <Link href={"/services"} className="font-semibold text-[var(--background)] duration-300" onClick={() => toggleMobile()}>Services</Link>
-                    <Link href={"/blogs"} className="font-semibold text-[var(--background)] duration-300" onClick={() => toggleMobile()}>Blogs</Link>
-                    <Link href={"#"} className="font-semibold text-[var(--background)] duration-300" onClick={() => toggleMobile()}>Why Us</Link>
+                    <Link href={"/blog"} className="font-semibold text-[var(--background)] duration-300" onClick={() => toggleMobile()}>Blogs</Link>
+                    <Link href={"/#why-us"} className="font-semibold text-[var(--background)] duration-300" onClick={() => toggleMobile()}>Why Us</Link>
                     <Link href={"/contact"} className={`font-semibold hover:text-[var(--foreground)] hover:bg-[var(--background)] duration-300 border px-5 py-2 ${isScrolled ? "bg-transparent border-[var(--background)] text-[var(--background)]" : "bg-[var(--background)] text-[var(--foreground)] border-transparent"}`} onClick={() => toggleMobile()}>CONTACT US</Link>
                 </div>
             </div>

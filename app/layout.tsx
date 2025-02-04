@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "@/styles/globals.css";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
+import ProviderWrapper from "./ProviderWrapper";
 
 export const metadata: Metadata = {
   title: "Impact Makers Events",
@@ -44,9 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <ProviderWrapper>
+          <div>
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
+        </ProviderWrapper>
       </body>
     </html>
   );

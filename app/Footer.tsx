@@ -1,11 +1,24 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link';
-import React from 'react'
+import { useState, useEffect } from 'react'
 import { FaInstagram, FaFacebookF, FaLinkedin } from 'react-icons/fa'
 import { FaXTwitter } from "react-icons/fa6";
+import { usePathname } from 'next/navigation'
 
 export default function Footer() {
-  return (
+    const [isActive, setIsActive] = useState(false)
+    const pathname = usePathname()
+    const p = pathname.split('/')[1] || ''
+
+    useEffect(() => {
+        if (p === 'dashboard') {
+          setIsActive(false)
+        } else {
+          setIsActive(true)
+        }
+      }, [p])
+  if (isActive) return (
     <footer className='w-full flex flex-col px-5 xl:px-20 bg-[var(--foreground)]'>
         <div className="w-full flex flex-col items-center pt-20 pb-10 border-b border-[var(--background)] gap-10">
             <Image className={`w-[200px] sm:w-[300px] object-contain`} src={"/logo_rev.svg"} alt="logo" width={300} height={70} />
@@ -20,7 +33,7 @@ export default function Footer() {
                 <Link href="/">Home</Link>
                 <Link href="/about">About Us</Link>
                 <Link href="/services">Services</Link>
-                <Link href="/blogs">Events</Link>
+                <Link href="/blog">Blogs</Link>
                 <Link href="#">Why Us</Link>
                 <Link href="/contact">Contact</Link>
             </div>
