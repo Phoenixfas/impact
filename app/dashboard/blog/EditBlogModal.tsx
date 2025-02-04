@@ -41,7 +41,7 @@ export default function EditBlogModal() {
             return
         }
 
-        // @ts-expect-error
+        // @ts-ignore
         const img: any = document.getElementById("image").files[0]
         const imgData = new FormData()
         imgData.append('file', img)
