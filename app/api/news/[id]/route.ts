@@ -5,8 +5,7 @@ import New from "@/models/New";
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
     try {
         await dbConnect();
-        const p = await params;
-        const id = p.id || "";
+        const { id } = params;
 
         const blog = await New.findById(id);
         if (!blog) {
