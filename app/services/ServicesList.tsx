@@ -11,7 +11,7 @@ export default function ServicesList() {
   return (
     <div className='w-full p-5 sm:p-20 flex flex-wrap justify-center gap-10'>
         {s.map((service, index) => (
-            <div key={index} className="w-full max-w-[600px] flex flex-col rounded-xl overflow-hidden border border-[var(--forground)] bg-[var(--foreground)] text-[var(--background)] gap-5 shadow-xl shadow-[var(--foreground)]">
+            <div key={index} className="w-full max-w-[600px] flex flex-col rounded-xl overflow-hidden border border-[var(--forground)] bg-[var(--primary)] text-[var(--background)] gap-5 shadow-xl shadow-[var(--foreground)]">
                 <Image className='w-full h-[300px] object-cover' src={service?.main_img} alt='img' width={1200} height={800} />
                 <div className="w-full flex flex-col">
                     <h1 className="text-3xl font-bold mt-5 px-5 black-ops">{service.name}</h1>

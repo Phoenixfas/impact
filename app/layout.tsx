@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Impact Makers Events",
     description: "Transform your events into extraordinary experiences with Impact Makers Events. We offer expert planning, custom event design, and seamless execution for corporate and luxury events.",
-    url: "https://www.impactmakers.com",
+    url: "https://www.impactmakersevents.com",
     siteName: "Impact Makers Events",
     images: [
       {

@@ -63,7 +63,7 @@ export default function Navbar() {
                         <Link href="/#why-us">Why Us</Link>
                     </div>
                     <div className="hidden lg:flex items-center text-xl ">
-                        <Link href={"/contact"} className={` px-7 py-2 border ${isScrolled ? "text-[var(--foreground)] hover:text-[var(--background)] bg-[var(--background)] hover:bg-[var(--foreground)] border-[var(--background)]" : "text-[var(--background)] hover:text-[var(--foreground)] bg-[var(--foreground)] hover:bg-[var(--background)] border-[var(--foreground)]"} duration-300 garet`}>CONTACT US</Link>
+                        <Link href={"/contact"} className={` px-7 py-2 border ${isScrolled ? "text-[var(--foreground)] hover:text-[var(--background)] bg-[var(--background)] hover:bg-[var(--primary)] border-[var(--primary)]" : "text-[var(--background)] hover:text-[var(--background)] bg-[var(--foreground)] hover:bg-[var(--primary)] border-[var(--foreground)]"} duration-300 garet`}>CONTACT US</Link>
                     </div>
                 </div>
                 <div className="relative flex-[1] flex justify-end items-center cursor-pointer lg:hidden" onClick={() => toggleMobile()}>

@@ -71,7 +71,7 @@ export default function BlogCard({ d }: BlogCardProps) {
                 quality={100}
               />
               <div className="relative w-full h-full flex flex-col items-center bg-[#ffffffaa] pt-32 pb-10 px-7 gap-10 ">
-                <div className="absolute left-10 top-10 -translate-y-1/2 rotate-45 w-10 h-80 bg-[var(--foreground)]"></div>
+                <div className="absolute left-10 top-10 -translate-y-1/2 rotate-45 w-10 h-80 bg-[var(--primary)]"></div>
                 <div className="absolute left-12 top-10 -translate-y-1/2 rotate-45 w-3 h-80 bg-[#fff]"></div>
                 <Image
                   className="max-w-[200px] object-contain"
