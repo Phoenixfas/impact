@@ -29,6 +29,18 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'SpaceMono';
+  src: url('/fonts/SpaceMono_Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SpaceMonoBold';
+  src: url('/fonts/SpaceMono_Bold.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
 .garet {
   font-family: 'Garet', sans-serif;
@@ -38,6 +50,13 @@
 }
 .black-ops {
   font-family: "ZenDots", serif;
+}
+
+.space-mono {
+  font-family: "SpaceMono", serif;
+}
+.space-mono-bold {
+  font-family: "SpaceMonoBold", serif;
 }
 
 @layer base {

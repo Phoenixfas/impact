@@ -52,9 +52,9 @@ export default function Navbar() {
     if (isActive) return (
         <>
             <nav className={`fixed top-0 left-0 z-[99999999] w-full flex px-5 xl:px-20 ${isScrolled ? "bg-[var(--foreground)]" : "bg-transparent"} duration-300`} role='navigation'>
-                <div className={`relative w-full flex justify-between items-center h-20 ${isScrolled ? "text-[var(--background)] border-b border-[var(--background)]" : "text-[var(--foreground)]"} relative garet`}>
+                <div className={`relative w-full flex justify-between items-center h-20 ${isScrolled ? "text-[var(--background)] border-b border-[var(--background)]" : "text-[var(--background)]"} relative garet`}>
                     <Link href={"/"} className="flex items-center">
-                        <Image className={`w-[200px] sm:w-[250px] object-contain`} src={isScrolled ? "/logo_rev.svg" : "/logo.svg"} alt="logo" width={250} height={70} />
+                        <Image className={`w-[200px] sm:w-[250px] object-contain`} src={isScrolled ? "/logo_rev.svg" : "/logo_rev.svg"} alt="logo" width={250} height={70} />
                     </Link>
                     <div className="absolute left-1/2 -translate-x-1/2 hidden lg:flex items-center gap-10 text-xl">
                         <Link href="/about">About Us</Link>
@@ -63,11 +63,11 @@ export default function Navbar() {
                         <Link href="/#why-us">Why Us</Link>
                     </div>
                     <div className="hidden lg:flex items-center text-xl ">
-                        <Link href={"/contact"} className={` px-7 py-2 border ${isScrolled ? "text-[var(--foreground)] hover:text-[var(--background)] bg-[var(--background)] hover:bg-[var(--primary)] border-[var(--primary)]" : "text-[var(--background)] hover:text-[var(--background)] bg-[var(--foreground)] hover:bg-[var(--primary)] border-[var(--foreground)]"} duration-300 garet`}>CONTACT US</Link>
+                        <Link href={"/contact"} className={` px-7 py-2 border ${isScrolled ? "text-[var(--foreground)] hover:text-[var(--background)] bg-[var(--background)] hover:bg-[var(--primary)] border-[var(--primary)]" : "text-[var(--background)] hover:text-[var(--background)] bg-[var(--foreground)] hover:bg-[var(--primary)] border-[var(--background)]"} duration-300 garet`}>CONTACT US</Link>
                     </div>
                 </div>
                 <div className="relative flex-[1] flex justify-end items-center cursor-pointer lg:hidden" onClick={() => toggleMobile()}>
-                    <div className={`h-8 w-8 p-1 border ${isScrolled ? "border-[var(--background)] text-[var(--background)]" : "border-[var(--foreground)] text-[var(--foreground)]"} rounded-md text-4xl flex items-center justify-center`}>
+                    <div className={`h-8 w-8 p-1 border ${isScrolled ? "border-[var(--background)] text-[var(--background)]" : "border-[var(--background)] text-[var(--background)]"} rounded-md text-4xl flex items-center justify-center`}>
                         <HiOutlineMenuAlt3 />
                     </div>
                 </div>
