@@ -71,9 +71,18 @@ export default function NewHeroBg() {
     
         const pointCloud = new THREE.Points(geometry, pointMat);
         scene.add(pointCloud);
-        pointCloud.position.x = 15
         pointCloud.position.y = -5
         pointCloud.scale.set(0, 0, 0);
+        // screen size categorizer
+        if (window.innerWidth < 375) {
+          pointCloud.position.x = 5
+        } else if (window.innerWidth < 768) {
+          pointCloud.position.x = 10
+        } else if (window.innerWidth < 1024) {
+          pointCloud.position.x = 13
+        } else {
+          pointCloud.position.x = 15
+        }
 
         function animate() {
             requestAnimationFrame( animate );
