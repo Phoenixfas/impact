@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function VisMis() {
   return (
-    <div className='w-full px-8 sm:px-[100px] my-20 mt-[200px] flex flex-wrap md:flex-nowrap justify-center gap-10'>
+    <div className='relative w-full px-8 sm:px-[100px] my-20 mt-[200px] flex flex-wrap md:flex-nowrap justify-center gap-10'>
         <div className="flex max-w-[600px] gap-8">
             <div className="hidden xs:block min-w-[50px] lg:min-w-[100px] max-w-[100px] h-full border-t border-[var(--primary)] translate-y-[1.5rem]"></div>
             <div className="">

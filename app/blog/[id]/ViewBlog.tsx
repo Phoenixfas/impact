@@ -39,7 +39,7 @@ export default function ViewBlog() {
     blog && (
       <>
         <Hero title={blog.title} date={blog.date} />
-        <div className="w-full px-5 md:px-[80px] xl:px-[120px] mb-[100px]">
+        <div className="relative w-full px-5 md:px-[80px] xl:px-[120px] mb-[100px]">
           <div className="flex flex-col lg:flex-row gap-[100px] lg:gap-14 xl:gap-[100px]">
             <div className="min-w-[800px]">
               <div className="w-full mb-10 relative">

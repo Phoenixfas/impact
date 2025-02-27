@@ -7,10 +7,12 @@ import OurGoal from './OurGoal'
 import OurValue from './OurValue'
 import VisMis from './VisMis'
 import AboutClient from './AboutClient'
+import ThreeBG from '../ThreeBG'
 
 export default function page() {
   return (
     <div className="w-full min-h-screen relative">
+      <ThreeBG />
         <Hero title="About Us" />
         <Welcome />
         <AboutTeam />

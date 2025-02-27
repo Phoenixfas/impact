@@ -175,7 +175,7 @@ export default function NewHeroBg() {
     }, []);
 
   return (
-    <div className="fixed top-0 left-0 flex w-full h-screen flex-col items-center justify-center bg-red-400">
+    <div className="fixed top-0 left-0 flex w-full h-screen flex-col items-center justify-center">
       <div ref={boardRef} className="relative w-full h-screen bg-gray-500"></div>
     </div>
   )

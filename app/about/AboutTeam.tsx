@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function AboutTeam() {
   return (
-    <div className='w-full px-8 sm:px-[100px] my-20 flex flex-col gap-5'>
+    <div className='relative w-full px-8 sm:px-[100px] my-20 flex flex-col gap-5'>
         <div className="flex flex-wrap justify-between gap-14">
             <div className="flex-[1] text-[var(--foreground)] min-w-[250px] sm:min-w-[400px]">
                 <h3 className='text-lg sm:text-xl md:text-xl font-normal mb-8 black-ops'>About</h3>

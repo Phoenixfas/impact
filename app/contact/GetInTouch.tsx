@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function GetInTouch() {
   return (
-    <div className='w-full px-5 md:px-[120px] mb-14'>
+    <div className='relative w-full px-5 md:px-[120px] mb-14'>
         <h2 className='text-6xl mb-14'>Get In Touch</h2>
         <div className="flex items-center flex-wrap gap-10">
         <div className="max-w-[400px]">
