@@ -1,10 +1,29 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 // import blogs from '../data/blogs'
 import Link from "next/link";
+import { useEffect, useState, useRef } from 'react'
+import { motion, useInView, useAnimationControls } from 'framer-motion'
+
+const variant1 = {
+    visible: { opacity: 1, y: 0, transition: { duration: .7, } },
+    hidden: { opacity: 0, y: -100, transition: { duration: .7, } }
+}
+const variant2 = {
+    visible: { opacity: 1, transition: { duration: .7, delay: .2 } },
+    hidden: { opacity: 0, transition: { duration: .7, } }
+}
+const variant3 = {
+    visible: { opacity: 1, y: 0, transition: { duration: .7, delay: .4} },
+    hidden: { opacity: 0, y: 100, transition: { duration: .7, } }
+}
 
 export default function Blog() {
+  const blogs_con = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(blogs_con, { margin: "0px 0px -60% 0px", once: false})
+  const controls = useAnimationControls()
+
+
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -13,6 +32,9 @@ export default function Blog() {
       .then((data) => setBlogs(data.data))
       .catch((err) => console.log(err));
   }, []);
+  useEffect(() => {
+    controls.start(isInView ? "visible" : "hidden")
+}, [isInView, controls]);
 
   const dateConverter = (date: any) => {
     const newDate = new Date(date);
@@ -32,14 +54,14 @@ export default function Blog() {
     return "";
   };
   return (
-    <div className="w-full px-8 sm:px-[100px] py-20 flex flex-col gap-5 items-center">
-      <h3 className="text-xl sm:text-2xl md:text-3xl text-[var(--foreground)] font-semibold font-outline-white drop-shadow-[0_0_5px_var(--foreground)]  black-ops">
+    <div ref={blogs_con} className="relative w-full px-8 sm:px-[100px] py-20 flex flex-col gap-5 items-center">
+      <motion.h3 variants={variant1} animate={controls} className="text-xl sm:text-2xl md:text-3xl text-[var(--background)] font-semibold font-outline-black drop-shadow-[0_0_5px_var(--background)]  black-ops">
         Blogs
-      </h3>
-      <h2 className="text-3xl sm:text-4xl md:text-6xl text-center text-[var(--foreground)] font-bold max-w-[650px] md:leading-[4.25rem] mb-10 font-outline-white drop-shadow-[0_0_5px_var(--foreground)] black-ops">
+      </motion.h3>
+      <motion.h2 variants={variant2} animate={controls} className="text-3xl sm:text-4xl md:text-6xl text-center text-[var(--background)] font-bold max-w-[650px] md:leading-[4.25rem] mb-10 font-outline-black drop-shadow-[0_0_5px_var(--background)] black-ops">
         From Impact Makers Events
-      </h2>
-      <div className="w-full flex flex-wrap gap-16 justify-center">
+      </motion.h2>
+      <motion.div variants={variant3} animate={controls} className="w-full flex flex-wrap gap-16 justify-center">
         {blogs?.slice(0, 3).map((blog: any, index: any) => (
           <Link
             href={`/blog/${blog._id}`}
@@ -104,7 +126,7 @@ export default function Blog() {
             </div>
           </Link>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 }

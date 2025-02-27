@@ -1,4 +1,20 @@
+'use client'
 import { FaRegCalendarCheck, FaPaintBrush, FaHandHoldingUsd, FaClipboardList, FaUsersCog, FaCheckCircle } from "react-icons/fa";
+import { useEffect, useRef } from 'react'
+import { motion, useInView, useAnimationControls } from 'framer-motion'
+
+const variant1 = {
+    visible: { opacity: 1, y: 0, transition: { duration: .7, } },
+    hidden: { opacity: 0, y: -100, transition: { duration: .7, } }
+}
+const variant2 = {
+    visible: { opacity: 1, transition: { duration: .7, delay: .2 } },
+    hidden: { opacity: 0, transition: { duration: .7, } }
+}
+const variant3 = {
+    visible: { opacity: 1, y: 0, transition: { duration: .7, delay: .4} },
+    hidden: { opacity: 0, y: 100, transition: { duration: .7, } }
+}
 
 const steps = [
   {
@@ -47,22 +63,29 @@ const steps = [
 
 
 export default function PlanningProcess() {
+  const planning_con = useRef<HTMLHeadingElement>(null);
+  const isInView = useInView(planning_con, { margin: "0px 0px -60% 0px", once: false})
+  const controls = useAnimationControls()
+
+  useEffect(() => {
+      controls.start(isInView ? "visible" : "hidden")
+  }, [isInView, controls]);
   return (
-    <section className="bg-[var(--foreground)] pt-20 pb-28 px-6 md:px-12">
+    <section ref={planning_con} className="relative flex flex-col items-center pt-20 pb-28 px-5 sm:px-20">
       <div className="max-w-[1000px] mx-auto text-center">
-        <h2 className="text-4xl leading-[3rem] md:text-6xl font-light text-center md:leading-[6rem] text-[var(--background)] font-outline-black drop-shadow-[0_0_5px_var(--background)] black-ops">Our Event Planning Process</h2>
-        <p className="text-xl text-[var(--background)] mt-4">Step-by-step, we bring your vision to life.</p>
+        <motion.h2 variants={variant1} animate={controls} className="text-4xl leading-[3rem] md:text-6xl font-light text-center md:leading-[6rem] text-[var(--background)] font-outline-black drop-shadow-[0_0_5px_var(--background)] black-ops">Our Event Planning Process</motion.h2>
+        <motion.p variants={variant2} animate={controls} className="text-xl text-[var(--background)] mt-4">Step-by-step, we bring your vision to life.</motion.p>
       </div>
 
-      <div className="mt-10 flex flex-col space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+      <motion.div variants={variant3} animate={controls} className="max-w-[1200px] mt-10 flex flex-col space-y-8 md:space-y-0 md:grid md:grid-cols-2 md:gap-8 lg:grid-cols-2">
         {steps.map((step) => (
-          <div key={step.id} className="flex flex-col items-center text-center p-6 bg-white shadow-lg rounded-2xl">
+          <div key={step.id} className="group flex flex-col items-center text-center p-6 border border-[var(--background)] hover:bg-[var(--background)] duration-300 shadow-lg rounded-2xl">
             <div className="p-4 bg-gray-200 rounded-full mb-4">{step.icon}</div>
-            <h3 className="text-xl font-semibold text-gray-800">{step.title}</h3>
-            <p className="text-gray-600 mt-2">{step.description}</p>
+            <h3 className="text-xl font-semibold text-[var(--background)] group-hover:text-[var(--foreground)] duration-300 opacity-75">{step.title}</h3>
+            <p className="text-[var(--background)] group-hover:text-[var(--foreground)] duration-300 mt-2">{step.description}</p>
           </div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

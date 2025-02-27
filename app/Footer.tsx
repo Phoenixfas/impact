@@ -19,7 +19,7 @@ export default function Footer() {
         }
       }, [p])
   if (isActive) return (
-    <footer className='w-full flex flex-col px-5 xl:px-20 bg-[var(--foreground)]'>
+    <footer className='relative w-full flex flex-col px-5 xl:px-20 bg-[var(--foreground)]'>
         <div className="w-full flex flex-col items-center pt-20 pb-10 border-b border-[var(--background)] gap-10">
             <Image className={`w-[200px] sm:w-[300px] object-contain`} src={"/logo_rev.svg"} alt="logo" width={300} height={70} />
 
