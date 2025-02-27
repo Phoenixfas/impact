@@ -139,7 +139,7 @@ export default function NewHeroBg() {
                 scrub: true,
                 onUpdate: (self) => {
                   for (let i = 0; i < numPoints; i++) {
-                    let idx = i * 3;
+                    const idx = i * 3;
                     positions[idx] = originalPositions[idx] * (1 - morphFactor.value) + targetPositions[idx] * morphFactor.value;
                     positions[idx + 1] = originalPositions[idx + 1] * (1 - morphFactor.value) + targetPositions[idx + 1] * morphFactor.value;
                     positions[idx + 2] = originalPositions[idx + 2] * (1 - morphFactor.value) + targetPositions[idx + 2] * morphFactor.value;
