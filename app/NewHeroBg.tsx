@@ -32,25 +32,25 @@ export default function NewHeroBg() {
         const positions = new Float32Array(numPoints * 3);
         const originalPositions = new Float32Array(numPoints * 3);
         const targetPositions = new Float32Array(numPoints * 3);
-        let morphFactor = { value: 0 };
+        const morphFactor = { value: 0 };
         
         function getEvenlyDistributedCubePoint(index: any) {
-            let s = Math.cbrt(numPoints);
-            let i = index % s;
-            let j = Math.floor((index / s) % s);
-            let k = Math.floor(index / (s * s));
-            let x = (i / (s - 1) - 0.5) * cubeSize;
-            let y = (j / (s - 1) - 0.5) * cubeSize;
-            let z = (k / (s - 1) - 0.5) * cubeSize;
+            const s = Math.cbrt(numPoints);
+            const i = index % s;
+            const j = Math.floor((index / s) % s);
+            const k = Math.floor(index / (s * s));
+            const x = (i / (s - 1) - 0.5) * cubeSize;
+            const y = (j / (s - 1) - 0.5) * cubeSize;
+            const z = (k / (s - 1) - 0.5) * cubeSize;
             return [x, y, z];
         }
 
         function getEvenlyDistributedSpherePoint(index: any) {
-            let phi = Math.acos(1 - 2 * (index / (numPoints - 1)));
-            let theta = Math.PI * (1 + Math.sqrt(5)) * index;
-            let x = Math.sin(phi) * Math.cos(theta);
-            let y = Math.sin(phi) * Math.sin(theta);
-            let z = Math.cos(phi);
+            const phi = Math.acos(1 - 2 * (index / (numPoints - 1)));
+            const theta = Math.PI * (1 + Math.sqrt(5)) * index;
+            const x = Math.sin(phi) * Math.cos(theta);
+            const y = Math.sin(phi) * Math.sin(theta);
+            const z = Math.cos(phi);
             return [x * (cubeSize / 2), y * (cubeSize / 2), z * (cubeSize / 2)];
         }
 
@@ -119,7 +119,7 @@ export default function NewHeroBg() {
                 scrub: true,
                 onUpdate: (self) => {
                   for (let i = 0; i < numPoints; i++) {
-                    let idx = i * 3;
+                    const idx = i * 3;
                     positions[idx] = originalPositions[idx] * (1 - morphFactor.value) + targetPositions[idx] * morphFactor.value;
                     positions[idx + 1] = originalPositions[idx + 1] * (1 - morphFactor.value) + targetPositions[idx + 1] * morphFactor.value;
                     positions[idx + 2] = originalPositions[idx + 2] * (1 - morphFactor.value) + targetPositions[idx + 2] * morphFactor.value;
